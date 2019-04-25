@@ -4,15 +4,23 @@ body{
     margin: 0%;
 }
 
+.hide{
+    display: none;
+}
+
 .main-container{
+    display: flex;
     
 }
 .background img{
-     width: 100%;
-     height: auto;
+     width: 120%;
+     height: 100%;
  }
-.menu-login{
-    width: 300px;
+
+ /*** welcome menu ***/
+
+.menu-welcome{
+    width: 250px;
     height: 350px;
     border: solid;
     border-width: 15px;
@@ -20,17 +28,47 @@ body{
     background-color:white;
     position: absolute;
     z-index: 1;
-    margin-left: 25%;
+    margin-left: 40%;
+    margin-top: 10%;
     border-radius: 7%;
     font-family: @font;
     font-size: 20px;
     text-align: center;
 }
-.menu-login img{
-    width: 100px;
+.menu-welcome img{
+    width: 130px;
     height: 150px;
     align-items: center;
+    margin-left: 14%;
 }
+
 .button{
-    
+    border: none;
+    border-radius: 25px;
+     padding: 10px 60px;
+     color:white;
+     background-color: #ff3333;
+     font-family: @font;
+     font-size: 15px;  
+     margin: 4px;
 }
+.button:hover{
+    background-color: #ff6666;
+}
+
+/*** menu name and level***/
+
+.menu-login{
+    border: solid;
+    height: 450px;
+    .menu-welcome();
+    .buttons-level{
+        display: flex;
+        flex-direction: column;
+    }
+    input{
+        width: 250px;
+        height: 20px;
+    }
+}
+
