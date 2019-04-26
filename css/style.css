@@ -11,7 +11,7 @@ body {
   width: 120%;
   height: 100%;
 }
-/*** welcome menu ***/
+/*** Welcome menu ***/
 .menu-welcome {
   width: 250px;
   height: 350px;
@@ -47,7 +47,7 @@ body {
 .button:hover {
   background-color: #ff6666;
 }
-/*** menu name and level***/
+/*** Menu name and level***/
 .menu-login {
   height: 450px;
   width: 250px;
@@ -72,4 +72,24 @@ body {
 .menu-login input {
   width: 250px;
   height: 20px;
+}
+/**Board**/
+.main-board {
+  width: 250px;
+  height: 350px;
+  border: solid;
+  border-width: 15px;
+  padding: 15px;
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+  margin-left: 40%;
+  margin-top: 10%;
+  border-radius: 7%;
+  font-family: 'Acme', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  width: 700px;
+  height: auto;
+  margin-left: 20%;
 }
