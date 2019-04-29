@@ -21,14 +21,14 @@
             <img src="imagenes/fondo.jpg" alt="">
         </div>
         <!--Welcome menu-->
-        <div class="menu-welcome">
+        <div class="menu-welcome hide">
             <p>Hola!👋</p>
             <p>Bienvenido al memotest de obras de arte!</p>
             <img src="imagenes/pulpito.png" alt="">
             <button class="button">Empezar a jugar</button>
         </div>
         <!--Login-menu-->
-        <div class="menu-login hide">
+        <div class="menu-login">
             <p>Antes de empezar tenes que ingresar tu nombre,</p>
             <input type="text">
             <p>Y elegir un nivel!</p>
@@ -37,6 +37,9 @@
                 <button class="button">FÁCIL</button>
                 <button class="button">INTERMEDIO</button>
                 <button class="button">EXPERTO</button>
+            </div>
+            <div class="button hide" id="err-button">
+                <p>No olvides poner tu nombre!😬</p>
             </div>
         </div>
         <!--Main-board-->
@@ -102,7 +105,7 @@
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="index.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

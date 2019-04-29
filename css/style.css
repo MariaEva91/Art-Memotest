@@ -1,3 +1,5 @@
+/**Typographi**/
+/**Body**/
 body {
   margin: 0%;
 }
@@ -49,7 +51,6 @@ body {
 }
 /*** Menu name and level***/
 .menu-login {
-  height: 450px;
   width: 250px;
   height: 350px;
   border: solid;
@@ -64,6 +65,7 @@ body {
   font-family: 'Acme', sans-serif;
   font-size: 20px;
   text-align: center;
+  height: auto;
 }
 .menu-login .buttons-level {
   display: flex;
@@ -72,6 +74,11 @@ body {
 .menu-login input {
   width: 250px;
   height: 20px;
+}
+.menu-login #err-button {
+  background-color: #ff6666;
+  border-radius: 15px;
+  padding: 10px 30px;
 }
 /**Board**/
 .main-board {
