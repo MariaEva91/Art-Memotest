@@ -140,3 +140,23 @@ body {
   width: 300px;
   margin-left: 10%;
 }
+/**Lose-modal**/
+.lose-modal {
+  width: 250px;
+  height: 350px;
+  border: solid;
+  border-width: 15px;
+  padding: 15px;
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+  margin-left: 40%;
+  margin-top: 10%;
+  border-radius: 7%;
+  font-family: 'Acme', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  width: 400px;
+  height: auto;
+  margin-left: 30%;
+}
