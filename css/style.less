@@ -1,4 +1,9 @@
+/**Typographi**/
+
 @font: 'Acme', sans-serif;
+@cursiva:'Lobster', cursive;
+
+/**Body**/
 
 body{
     margin: 0%;
@@ -9,8 +14,7 @@ body{
 }
 
 .main-container{
-    display: flex;
-    
+    display: flex; 
 }
 .background img{
      width: 120%;
@@ -125,4 +129,34 @@ padding: 8px;
     width: 400px;
     height: auto;
     margin-left: 30%;
+}
+
+/**Art-gallery-modal**/
+
+.art-gallery{
+    .menu-welcome();
+    width: 900px;
+    height: auto;
+    margin-left: 15%;
+    #h4{
+        font-family: @cursiva;
+        font-size: 30px;
+        text-align: left;
+        margin-left: 10%;
+    }
+    .carrousel-pictures{
+        width: 800px;
+        margin-left: 7%;
+        i{
+            font-size: 50px;
+            position: absolute;
+            margin-top: 25%;
+            margin-left: -10px;
+            padding-right: 20px;
+        }
+    }
+}
+.art-gallery img{
+    width: 600px;
+    height: 500px;
 }
