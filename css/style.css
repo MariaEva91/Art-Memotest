@@ -102,10 +102,41 @@ body {
   height: 40px;
   background-color: aliceblue;
   font-family: 'Acme', sans-serif;
-  font-size: 15px;
+  font-size: 17px;
 }
 .cards-board img {
   width: 180px;
   height: 130px;
   padding: 8px;
+}
+/**Win-modal**/
+.win-modal {
+  width: 250px;
+  height: 350px;
+  border: solid;
+  border-width: 15px;
+  padding: 15px;
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+  margin-left: 40%;
+  margin-top: 10%;
+  border-radius: 7%;
+  font-family: 'Acme', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  width: 400px;
+  margin-left: 35%;
+  height: auto;
+}
+.win-modal .table-ranking {
+  display: flex;
+}
+.win-modal .table-ranking .indicadores {
+  display: flex;
+  justify-content: space-around;
+  border: groove;
+  border-color: black;
+  width: 300px;
+  margin-left: 10%;
 }
