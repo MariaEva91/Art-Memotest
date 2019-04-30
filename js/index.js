@@ -1,8 +1,12 @@
 //**Variables */
 
 let name = '';
-let level;
-let attempts;
+let easy = false;
+let medium = false;
+let expert = false;
+let attempts = 0;
+let attemptsMax = 0;
+let difficulty = '';
 let cards = [
     img1 = {
         src: 'imagenes/los-tres-musicos.jpg',
@@ -77,6 +81,72 @@ $('.level').on('click', () => {
     }
 });
 
-//** */
+
+//**Difficulty */
+//**Level Easy */
+
+$('#easy').on('click', () => {
+    if (name != '') {
+        easy = true;
+        attemptsMax = 18;
+        difficulty = 'Fácil';
+        $('#attemptsMax').append(` <span >` + attemptsMax + ` </span>`);
+        $('#levelChosen').append(` <span >` + difficulty + ` </span>`);
+    }
+})
+//**Level medium */
+
+$('#medium').on('click',()=>{
+    if(name != ''){
+        medium = true;
+        attemptsMax = 12;
+        difficulty = 'Intermedio';
+        $('#attemptsMax').append(` <span >` + attemptsMax + ` </span>`);
+        $('#levelChosen').append(` <span >` + difficulty + ` </span>`);
+    }
+})
+
+//**Level Expert */
+
+$('#expert').on('click',()=>{
+    if(name != ''){
+        expert = true;
+        attemptsMax = 9;
+        difficulty = 'Experto';
+        $('#attemptsMax').append(` <span >` + attemptsMax + ` </span>`);
+        $('#levelChosen').append(` <span >` + difficulty + ` </span>`);
+    }
+});
+
+//**Random function */
+
+function shuffle(cards) {
+    let j
+    let x
+    let i
+    for (i = cards.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = cards[i].id;
+        cards[i].id = cards[j].id;
+        cards[j].id = x;
+    }
+    return cards;
+}
+
+shuffle(cards);
+
+//**Pushing the cards  */
+
+let imgLength = $('.front').length;
+for(let i = 0; i < imgLength;i++){
+    $('.front').eq(i).attr('data-img',cards[i]);
+};
+
+$('.front').on('click',()=>{
+    let visible = $(this).attr('data-img');
+    $(this).attr('src',visible);
+})
+
+
 
 

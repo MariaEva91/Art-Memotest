@@ -114,6 +114,12 @@ body {
 .main-board #name {
   color: #ff3333;
 }
+.main-board #attemptsMax {
+  color: #ff3333;
+}
+.main-board #levelChosen {
+  color: #ff3333;
+}
 .cards-board img {
   width: 180px;
   height: 130px;

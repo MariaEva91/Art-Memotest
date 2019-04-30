@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-        <link rel="shortcut icon" href="imagenes/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="imagenes/favicon.ico" type="image/x-icon">
-        <title>Art Memotest</title>
+    <link rel="shortcut icon" href="imagenes/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="imagenes/favicon.ico" type="image/x-icon">
+    <title>Art Memotest</title>
 </head>
 
 <body>
@@ -34,9 +34,9 @@
             <p>Y elegir un nivel!</p>
             <p>Buena suerte!🍀</p>
             <div class="buttons-level">
-                <button class="button level">FÁCIL</button>
-                <button class="button level">INTERMEDIO</button>
-                <button class="button level">EXPERTO</button>
+                <button id="easy" class="button level">FÁCIL</button>
+                <button id="medium" class="button level">INTERMEDIO</button>
+                <button id="expert" class="button level">EXPERTO</button>
             </div>
             <div class="button hide" id="err-button">
                 <p>No olvides poner tu nombre!😬</p>
@@ -44,22 +44,22 @@
         </div>
         <!--Main-board-->
         <div class="main-board hide">
-            <p>Hola <span id="name" ></span> !😀</p>
-            <p>Tenes que encontrar todos los pares de obras en menos de 18 intentos.</p>
-            <p>Nivel: <span>FACIL</span></p>
+            <p>Hola <span id="name"></span> !😀</p>
+            <p>Tenes que encontrar todos los pares de obras en menos de <span id="attemptsMax"></span> intentos.</p>
+            <p>Nivel: <span id="levelChosen"></span></p>
             <div class="cards-board">
-                <img src="imagenes/fondo-pastiche.jpg" alt="" data-img="">
-                <img src="imagenes/fondo-pastiche.jpg" alt="" data-img="">
-                <img src="imagenes/fondo-pastiche.jpg" alt="" data-img="">
-                <img src="imagenes/fondo-pastiche.jpg" alt="" data-img="">
-                <img src="imagenes/fondo-pastiche.jpg" alt="" data-img="">
-                <img src="imagenes/fondo-pastiche.jpg" alt="" data-img="">
-                <img src="imagenes/fondo-pastiche.jpg" alt="" data-img="">
-                <img src="imagenes/fondo-pastiche.jpg" alt="" data-img="">
-                <img src="imagenes/fondo-pastiche.jpg" alt="" data-img="">
-                <img src="imagenes/fondo-pastiche.jpg" alt="" data-img="">
-                <img src="imagenes/fondo-pastiche.jpg" alt="" data-img="">
-                <img src="imagenes/fondo-pastiche.jpg" alt="" data-img="">
+                <img class="front" src="imagenes/fondo-pastiche.jpg" alt="" id="1" data-img="">
+                <img class="front" src="imagenes/fondo-pastiche.jpg" alt="" id="2" data-img="">
+                <img class="front" src="imagenes/fondo-pastiche.jpg" alt="" id="3" data-img="">
+                <img class="front" src="imagenes/fondo-pastiche.jpg" alt="" id="4" data-img="">
+                <img class="front" src="imagenes/fondo-pastiche.jpg" alt="" id="5" data-img="">
+                <img class="front" src="imagenes/fondo-pastiche.jpg" alt="" id="6" data-img="">
+                <img class="front" src="imagenes/fondo-pastiche.jpg" alt="" id="7" data-img="">
+                <img class="front" src="imagenes/fondo-pastiche.jpg" alt="" id="8" data-img="">
+                <img class="front" src="imagenes/fondo-pastiche.jpg" alt="" id="9" data-img="">
+                <img class="front" src="imagenes/fondo-pastiche.jpg" alt="" id="10" data-img="">
+                <img class="front" src="imagenes/fondo-pastiche.jpg" alt="" id="11" data-img="">
+                <img class="front" src="imagenes/fondo-pastiche.jpg" alt="" id="12" data-img="">
             </div>
             <button class="button-attempts">Intentos: </button>
         </div>
