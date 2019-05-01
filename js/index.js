@@ -4,6 +4,7 @@ let name = '';
 let easy = false;
 let medium = false;
 let expert = false;
+let won = null;
 let attempts = 0;
 let attemptsMax = 0;
 let difficulty = '';
@@ -134,6 +135,128 @@ function shuffle(cards) {
 }
 shuffle(cards);
 
+//**Save dates for ranking at Local Storage */
+
+function ranking(){
+    let winner = {
+        who: name,
+        level: difficulty,
+        howManyAttempts: attempts
+    }
+    let dataEasy = localStorage.getItem('winnerEasy');
+    let dataMedium = localStorage.getItem('winnerMedium');
+    let dataExpert = localStorage.getItem('winnerExpert');
+
+    if (dataEasy == null){
+        dataEasy = [];
+    } else if (dataEasy != null) {
+      dataEasy = JSON.parse(dataEasy)
+    }
+    
+    if (dataMedium == null){
+      dataMedium = [];
+    } else if (dataMedium != null) {
+    dataMedium = JSON.parse(dataMedium)
+    }
+    
+    if (dataExpert == null){
+      dataExpert = [];
+    } else if (dataExpert != null) {
+    dataExpert = JSON.parse(dataExpert)
+    }
+       
+    if (winner.level == "Fácil") {
+      dataEasy.push(winner)
+    }
+    
+    if (winner.level == "Intermedio") {
+      dataEasy.push(winner)
+    }
+    
+    if (winner.level == "Experto") {
+      dataEasy.push(winner)
+    }
+    
+    dataEasy.sort(function(winnerA,winnerB){
+       return winnerA.howManyAttempts - winnerB.howManyAttempts;
+    })
+    dataEasy.slice(0,3);
+    
+    dataMedium.sort(function(winnerA,winnerB){
+      return winnerA.howManyAttempts - winnerB.howManyAttempts;
+    })
+    dataMedium.slice(0,3);
+    
+    dataExpert.sort(function(winnerA,winnerB){
+      return winnerA.howManyAttempts - winnerB.howManyAttempts;
+    })
+    dataExpert.slice(0,3);
+          
+      localStorage.setItem('winnersEasy',JSON.stringify(dataEasy))
+      localStorage.setItem('winnersMedium',JSON.stringify(dataMedium))
+      localStorage.setItem('winnersExpert',JSON.stringify(dataExpert));
+
+      //**Append ranking */
+      //**Level easy */
+
+     function rankingAppendEasy(){
+         if((won === true) &&(winner.level == 'Fácil')){
+             for(let i = 0; i <= dataEasy.length -1; i++ ){
+                 $('.rankAppendEasy').append(`
+                 <div><span>${dataEasy[i].who}</span></div>
+                 <div><span>${dataEasy[i].level}</span></div>
+                 <div><span>${dataEasy[i].howManyAttempts}</span></div>`)
+             }
+         }
+      };
+        //**level medium */
+      function rankingAppendMedium(){
+          if((won === true) && (winer.level == 'Intermedio')){
+              for(let i = 0; i <= dataMedium.length -1;i++){
+                  $('.rankAppendMedium').append(`
+                  <div><span>${dataMedium[i].who}</span></div>
+                 <div><span>${dataMedium[i].level}</span></div>
+                 <div><span>${dataMedium[i].howManyAttempts}</span></div>
+                  `)
+              }
+          }
+      };
+        //**Level Expert */
+      function rankingAppendExpert(){
+          if((won === true) && (winer.level == 'Experto')){
+              for (let i = 0; i <= dataExpert.length -1;i++){
+                  $('.rankAppendExpert').append(`
+                  <div><span>${dataExpert[i].who}</span></div>
+                  <div><span>${dataExpert[i].level}</span></div>
+                  <div><span>${dataExpert[i].howManyAttempts}</span></div>
+                  `)
+              }
+          }
+      };
+
+      rankingAppendEasy();
+      rankingAppendMedium();
+      rankingAppendExpert();
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //**Pushing the cards  */
 
 let imgLength = $('.front').length;
@@ -141,20 +264,6 @@ for(let i = 0; i < imgLength;i++){
     $('.front').eq(i).attr('data-img',cards[i]);
    // console.log(cards)
 };
-
-$('.front').on('click',()=>{
-    console.log(this);
-    let visible = $(this).attr('data-img');
-    $(this).attr('src',visible);
-    //console.log(visible)
-});
-
-
-
-
-
-
-
 
 //**Play again button*/
 
