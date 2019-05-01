@@ -240,7 +240,6 @@ function ranking(){
       rankingAppendEasy();
       rankingAppendMedium();
       rankingAppendExpert();
-
 };
 
 //**Win & Lose functions */
@@ -258,6 +257,32 @@ function loosing(){
     $('.lose-modal').removeClass('hide');
     console.log('perdiste')
 };
+
+//**Won & Lost function */
+
+function wonLost(){
+    if((easy === true) && (attempts <= 18) && (coincidences == 6)){
+        won = true;
+        winning();
+    } else if((easy === true) && (attempts > 18) && (coincidences != 6)){
+        won = false;
+        loosing();
+    } else if((medium === true) && (attempts <= 12) && (coincidences == 6)){
+        won = true;
+        winning();
+    } else if((medium === true) && (attempts > 12) && (coincidences != 6)){
+        won = false;
+        loosing();
+    } else if((expert === true) && (attempts <= 9) && (coincidences == 6)){
+        won = true;
+        winning();
+    } else if((expert === true) && (attempts > 9) && (coincidences != 6)){
+        won = false;
+        loosing();
+    }
+};
+
+
 
 
 
