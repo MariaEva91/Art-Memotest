@@ -100,8 +100,8 @@ $('#easy').on('click', () => {
 })
 //**Level medium */
 
-$('#medium').on('click',()=>{
-    if(name != ''){
+$('#medium').on('click', () => {
+    if (name != '') {
         medium = true;
         attemptsMax = 12;
         difficulty = 'Intermedio';
@@ -112,8 +112,8 @@ $('#medium').on('click',()=>{
 
 //**Level Expert */
 
-$('#expert').on('click',()=>{
-    if(name != ''){
+$('#expert').on('click', () => {
+    if (name != '') {
         expert = true;
         attemptsMax = 9;
         difficulty = 'Experto';
@@ -140,7 +140,7 @@ shuffle(cards);
 
 //**Save dates for ranking at Local Storage */
 
-function ranking(){
+function ranking() {
     let winner = {
         who: name,
         level: difficulty,
@@ -150,101 +150,101 @@ function ranking(){
     let dataMedium = localStorage.getItem('winnerMedium');
     let dataExpert = localStorage.getItem('winnerExpert');
 
-    if (dataEasy == null){
+    if (dataEasy == null) {
         dataEasy = [];
     } else if (dataEasy != null) {
-      dataEasy = JSON.parse(dataEasy)
+        dataEasy = JSON.parse(dataEasy)
     }
-    
-    if (dataMedium == null){
-      dataMedium = [];
+
+    if (dataMedium == null) {
+        dataMedium = [];
     } else if (dataMedium != null) {
-    dataMedium = JSON.parse(dataMedium)
+        dataMedium = JSON.parse(dataMedium)
     }
-    
-    if (dataExpert == null){
-      dataExpert = [];
+
+    if (dataExpert == null) {
+        dataExpert = [];
     } else if (dataExpert != null) {
-    dataExpert = JSON.parse(dataExpert)
+        dataExpert = JSON.parse(dataExpert)
     }
-       
+
     if (winner.level == "Fácil") {
-      dataEasy.push(winner)
+        dataEasy.push(winner)
     }
-    
+
     if (winner.level == "Intermedio") {
-      dataEasy.push(winner)
+        dataEasy.push(winner)
     }
-    
+
     if (winner.level == "Experto") {
-      dataEasy.push(winner)
+        dataEasy.push(winner)
     }
-    
-    dataEasy.sort(function(winnerA,winnerB){
-       return winnerA.howManyAttempts - winnerB.howManyAttempts;
-    })
-    dataEasy.slice(0,3);
-    
-    dataMedium.sort(function(winnerA,winnerB){
-      return winnerA.howManyAttempts - winnerB.howManyAttempts;
-    })
-    dataMedium.slice(0,3);
-    
-    dataExpert.sort(function(winnerA,winnerB){
-      return winnerA.howManyAttempts - winnerB.howManyAttempts;
-    })
-    dataExpert.slice(0,3);
-          
-      localStorage.setItem('winnersEasy',JSON.stringify(dataEasy))
-      localStorage.setItem('winnersMedium',JSON.stringify(dataMedium))
-      localStorage.setItem('winnersExpert',JSON.stringify(dataExpert));
 
-      //**Append ranking */
-      //**Level easy */
+    dataEasy.sort(function (winnerA, winnerB) {
+        return winnerA.howManyAttempts - winnerB.howManyAttempts;
+    })
+    dataEasy.slice(0, 3);
 
-     function rankingAppendEasy(){
-         if((won === true) &&(winner.level == 'Fácil')){
-             for(let i = 0; i <= dataEasy.length -1; i++ ){
-                 $('.rankAppendEasy').append(`
+    dataMedium.sort(function (winnerA, winnerB) {
+        return winnerA.howManyAttempts - winnerB.howManyAttempts;
+    })
+    dataMedium.slice(0, 3);
+
+    dataExpert.sort(function (winnerA, winnerB) {
+        return winnerA.howManyAttempts - winnerB.howManyAttempts;
+    })
+    dataExpert.slice(0, 3);
+
+    localStorage.setItem('winnersEasy', JSON.stringify(dataEasy))
+    localStorage.setItem('winnersMedium', JSON.stringify(dataMedium))
+    localStorage.setItem('winnersExpert', JSON.stringify(dataExpert));
+
+    //**Append ranking */
+    //**Level easy */
+
+    function rankingAppendEasy() {
+        if ((won === true) && (winner.level == 'Fácil')) {
+            for (let i = 0; i <= dataEasy.length - 1; i++) {
+                $('.rankAppendEasy').append(`
                  <div><span>${dataEasy[i].who}</span></div>
                  <div><span>${dataEasy[i].level}</span></div>
                  <div><span>${dataEasy[i].howManyAttempts}</span></div>`)
-             }
-         }
-      };
-        //**level medium */
-      function rankingAppendMedium(){
-          if((won === true) && (winer.level == 'Intermedio')){
-              for(let i = 0; i <= dataMedium.length -1;i++){
-                  $('.rankAppendMedium').append(`
+            }
+        }
+    };
+    //**level medium */
+    function rankingAppendMedium() {
+        if ((won === true) && (winer.level == 'Intermedio')) {
+            for (let i = 0; i <= dataMedium.length - 1; i++) {
+                $('.rankAppendMedium').append(`
                   <div><span>${dataMedium[i].who}</span></div>
                  <div><span>${dataMedium[i].level}</span></div>
                  <div><span>${dataMedium[i].howManyAttempts}</span></div>
                   `)
-              }
-          }
-      };
-        //**Level Expert */
-      function rankingAppendExpert(){
-          if((won === true) && (winer.level == 'Experto')){
-              for (let i = 0; i <= dataExpert.length -1;i++){
-                  $('.rankAppendExpert').append(`
+            }
+        }
+    };
+    //**Level Expert */
+    function rankingAppendExpert() {
+        if ((won === true) && (winer.level == 'Experto')) {
+            for (let i = 0; i <= dataExpert.length - 1; i++) {
+                $('.rankAppendExpert').append(`
                   <div><span>${dataExpert[i].who}</span></div>
                   <div><span>${dataExpert[i].level}</span></div>
                   <div><span>${dataExpert[i].howManyAttempts}</span></div>
                   `)
-              }
-          }
-      };
+            }
+        }
+    };
 
-      rankingAppendEasy();
-      rankingAppendMedium();
-      rankingAppendExpert();
+    rankingAppendEasy();
+    rankingAppendMedium();
+    rankingAppendExpert();
 };
 
 //**Win & Lose functions */
 
-function winning(){
+function winning() {
     $('.main-board').addClass('hide');
     $('.win-modal').removeClass('hide');
     $('.attempts-won').append(attempts);
@@ -252,7 +252,7 @@ function winning(){
     console.log('ganaste!')
 };
 
-function loosing(){
+function loosing() {
     $('.main-board').addClass('hide');
     $('.lose-modal').removeClass('hide');
     console.log('perdiste')
@@ -260,58 +260,70 @@ function loosing(){
 
 //**Won & Lost function */
 
-function wonLost(){
-    if((easy === true) && (attempts <= 18) && (coincidences == 6)){
+function wonLost() {
+    if ((easy === true) && (attempts <= 18) && (coincidences == 6)) {
         won = true;
         winning();
-    } else if((easy === true) && (attempts > 18) && (coincidences != 6)){
+    } else if ((easy === true) && (attempts > 18) && (coincidences != 6)) {
         won = false;
         loosing();
-    } else if((medium === true) && (attempts <= 12) && (coincidences == 6)){
+    } else if ((medium === true) && (attempts <= 12) && (coincidences == 6)) {
         won = true;
         winning();
-    } else if((medium === true) && (attempts > 12) && (coincidences != 6)){
+    } else if ((medium === true) && (attempts > 12) && (coincidences != 6)) {
         won = false;
         loosing();
-    } else if((expert === true) && (attempts <= 9) && (coincidences == 6)){
+    } else if ((expert === true) && (attempts <= 9) && (coincidences == 6)) {
         won = true;
         winning();
-    } else if((expert === true) && (attempts > 9) && (coincidences != 6)){
+    } else if ((expert === true) && (attempts > 9) && (coincidences != 6)) {
         won = false;
         loosing();
     }
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //**Pushing the cards  */
 
 let imgLength = $('.front').length;
-for(let i = 0; i < imgLength;i++){
-    $('.front').eq(i).attr('data-img',cards[i]);
+for (let i = 0; i < imgLength; i++) {
+    $('.front').eq(i).attr('data-img', cards[i]);
    // console.log(cards)
+    console.log(cards[i]);
 };
+
+//**Append cards && comparing */
+
+let firstClick = [];
+let secondClick = [];
+
+$('.front').on('click', clickEnImg);
+
+function clickEnImg() {
+    console.log('hiciste click');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //**Play again button*/
 
-$('.again').on('click',()=>{
+$('.again').on('click', () => {
     location.reload();
 });
 
