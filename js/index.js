@@ -5,6 +5,9 @@ let easy = false;
 let medium = false;
 let expert = false;
 let won = null;
+let coincidences = 0;
+let clicks = 0;
+let same = false;
 let attempts = 0;
 let attemptsMax = 0;
 let difficulty = '';
@@ -238,6 +241,22 @@ function ranking(){
       rankingAppendMedium();
       rankingAppendExpert();
 
+};
+
+//**Win & Lose functions */
+
+function winning(){
+    $('.main-board').addClass('hide');
+    $('.win-modal').removeClass('hide');
+    $('.attempts-won').append(attempts);
+    ranking();
+    console.log('ganaste!')
+};
+
+function loosing(){
+    $('.main-board').addClass('hide');
+    $('.lose-modal').removeClass('hide');
+    console.log('perdiste')
 };
 
 
