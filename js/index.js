@@ -132,7 +132,6 @@ function shuffle(cards) {
     }
     return cards;
 }
-
 shuffle(cards);
 
 //**Pushing the cards  */
@@ -140,12 +139,28 @@ shuffle(cards);
 let imgLength = $('.front').length;
 for(let i = 0; i < imgLength;i++){
     $('.front').eq(i).attr('data-img',cards[i]);
+   // console.log(cards)
 };
 
 $('.front').on('click',()=>{
+    console.log(this);
     let visible = $(this).attr('data-img');
     $(this).attr('src',visible);
-})
+    //console.log(visible)
+});
+
+
+
+
+
+
+
+
+//**Play again button*/
+
+$('.again').on('click',()=>{
+    location.reload();
+});
 
 
 
