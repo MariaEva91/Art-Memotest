@@ -207,9 +207,9 @@ function ranking() {
         if ((won === true) && (winner.level == 'Fácil')) {
             for (let i = 0; i <= dataEasy.length - 1; i++) {
                 $('.rankAppendEasy').append(`
-                 <div><span>${dataEasy[i].who}</span></div>
-                 <div><span>${dataEasy[i].level}</span></div>
-                 <div><span>${dataEasy[i].howManyAttempts}</span></div>`)
+                <div><span>${dataEasy[i].who}</span></div><br>
+                 <div><span>${dataEasy[i].level}</span></div><br>
+                <div><span>${dataEasy[i].howManyAttempts}</span></div>`)
             }
         }
     };
@@ -218,9 +218,9 @@ function ranking() {
         if ((won === true) && (winer.level == 'Intermedio')) {
             for (let i = 0; i <= dataMedium.length - 1; i++) {
                 $('.rankAppendMedium').append(`
-                  <div><span>${dataMedium[i].who}</span></div>
-                 <div><span>${dataMedium[i].level}</span></div>
-                 <div><span>${dataMedium[i].howManyAttempts}</span></div>
+                 <div><span>${dataMedium[i].who}</span></div><br>
+               <div><span>${dataMedium[i].level}</span></div><br>
+               <div><span>${dataMedium[i].howManyAttempts}</span></div>
                   `)
             }
         }
@@ -230,8 +230,8 @@ function ranking() {
         if ((won === true) && (winer.level == 'Experto')) {
             for (let i = 0; i <= dataExpert.length - 1; i++) {
                 $('.rankAppendExpert').append(`
-                  <div><span>${dataExpert[i].who}</span></div>
-                  <div><span>${dataExpert[i].level}</span></div>
+                  <div><span>${dataExpert[i].who}</span></div><br>
+                 <div><span>${dataExpert[i].level}</span></div><br>
                   <div><span>${dataExpert[i].howManyAttempts}</span></div>
                   `)
             }
@@ -329,10 +329,10 @@ function clickImg() {
             }, 1200)
         }
     }
-
+    console.log(attempts);
+    $("#attemptsNow").append(`<span>${attempts}</span>`);
+    wonLost();
 }
-wonLost()
-$("#attemptsNow").append(`<span>${attempts}</span>`);
 
 //**Comparing cards */
 
@@ -342,12 +342,18 @@ for (i = 0; i < cards.length; i++) {
     }
 };
 
-
 //**Play again button*/
 
 $('.again').on('click', () => {
     location.reload();
 });
+
+//**Go Art Gallery */
+
+$('#goGallery').on('click',()=>{
+    $('.win-modal').addClass('hide');
+    $('.art-gallery').removeClass('hide');
+})
 
 
 

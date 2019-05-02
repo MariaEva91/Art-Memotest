@@ -154,15 +154,18 @@ body {
   height: auto;
 }
 .win-modal .table-ranking {
-  display: flex;
-}
-.win-modal .table-ranking .indicadores {
-  display: flex;
-  justify-content: space-around;
   border: groove;
   border-color: black;
   width: 300px;
   margin-left: 10%;
+}
+.win-modal .table-ranking .indicadores {
+  display: flex;
+  justify-content: space-around;
+}
+.win-modal .table-ranking .results {
+  display: flex;
+  justify-content: space-around;
 }
 /**Lose-modal**/
 .lose-modal {
