@@ -62,7 +62,8 @@ let cards = [
     }
 
 ];
-
+let turnedCards = [];
+let winnersArray = [];
 
 //**Start game: login and choose level */
 
@@ -282,43 +283,64 @@ function wonLost() {
     }
 };
 
-//**Pushing the cards  */
-
-let imgLength = $('.front').length;
-for (let i = 0; i < imgLength; i++) {
-    $('.front').eq(i).attr('data-img', cards[i]);
-   // console.log(cards)
-    console.log(cards[i]);
-};
-
-//**Append cards && comparing */
+//**Pushing the cards && comparing  */
 
 let firstClick = [];
 let secondClick = [];
 
-$('.front').on('click', clickEnImg);
+$('.front').on('click', clickImg);
 
-function clickEnImg() {
-    console.log('hiciste click');
+function clickImg() {
+    for (i = 0; i < cards.length; i++) {
+        if (($(this).attr('id') == cards[i].id) && (clicks <= 1)) {
+            $(this).attr('src', `${cards[i].src}`)
+            var card = cards[i]
+            turnedCards.push(card);
+            clicks++;
+            console.log(turnedCards);
+        }
+        if (clicks > 2) {
+            $(this).attr('src', 'imagenes/fondo-pastiche.jpg')
+        }
+    }
+    if (clicks == 2) {
+        if ((turnedCards[0].src === turnedCards[1].src) && (turnedCards[0].id != turnedCards[1].id)) {
+            same = true;
+        }
+    }
+    if (same === true) {
+        $(this).addClass('filter');
+        $("#" + turnedCards[0].id).addClass('filter');
+        coincidences++;
+        attempts++;
+        clicks = 0;
+        turnedCards.splice(0, turnedCards.length)
+        same = false;
+    } else if (same == false) {
+        var that = this;
+        if ((turnedCards[0].id != turnedCards[1].id)) {
+            attempts++
+            setTimeout(function () {
+                $(that).attr('src', 'imagenes/fondo-pastiche.jpg')
+                $("#" + turnedCards[0].id).attr('src', 'imagenes/fondo-pastiche.jpg');
+                clicks = 0;
+                turnedCards.splice(0, turnedCards.length)
+                same = false;
+            }, 1200)
+        }
+    }
+
 }
+wonLost()
+$("#attemptsNow").append(`<span>${attempts}</span>`);
 
+//**Comparing cards */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+for (i = 0; i < cards.length; i++) {
+    if ($(this).attr('id') == cards[i].id) {
+        $(this).attr('src', `${cards[i].src}`)
+    }
+};
 
 
 //**Play again button*/
