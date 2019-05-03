@@ -158,6 +158,7 @@ body {
   border-color: black;
   width: 300px;
   margin-left: 10%;
+  margin-bottom: 5%;
 }
 .win-modal .table-ranking .indicadores {
   display: flex;
@@ -217,14 +218,14 @@ body {
   width: 800px;
   margin-left: 7%;
 }
-.art-gallery .carrousel-pictures i {
+.art-gallery img {
+  width: 600px;
+  height: 500px;
+}
+i {
   font-size: 50px;
   position: absolute;
   margin-top: 25%;
   margin-left: -10px;
   padding-right: 20px;
-}
-.art-gallery img {
-  width: 600px;
-  height: 500px;
 }

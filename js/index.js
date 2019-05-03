@@ -64,6 +64,8 @@ let cards = [
 ];
 let turnedCards = [];
 let winnersArray = [];
+let titlePicture = ["LA MONA LISA<br/>LEONARDO DA VINCI", "LA NOCHE ESTRELLADA<br/>VINCENT VAN GOGH", "LA PERSISTENCIA DE LA MEMORIA<br/>SALVADOR DALI", "COMPOSICIÓN<br/>PIET MONDRIAN", "DAY BREAK <br/> JOAN MIRÓ"];
+let InfoPicture = [];
 
 //**Start game: login and choose level */
 
@@ -174,11 +176,11 @@ function ranking() {
     }
 
     if (winner.level == "Intermedio") {
-        dataEasy.push(winner)
+        dataMedium.push(winner)
     }
 
     if (winner.level == "Experto") {
-        dataEasy.push(winner)
+        dataExpert.push(winner)
     }
 
     dataEasy.sort(function (winnerA, winnerB) {
@@ -350,10 +352,20 @@ $('.again').on('click', () => {
 
 //**Go Art Gallery */
 
-$('#goGallery').on('click',()=>{
+$('#goGallery').on('click', () => {
     $('.win-modal').addClass('hide');
     $('.art-gallery').removeClass('hide');
-})
+});
+
+//*Push pictures to carrousel*/
+$('#buttonRight').on('click',()=>{
+    for(let i = 0; i < cards.length;i++){
+        $('.carrousel-pictures').append(`
+        <img src=${cards[1].src} alt="">`);
+    };
+});
+
+
 
 
 
