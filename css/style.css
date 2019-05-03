@@ -128,7 +128,7 @@ body {
 .turn {
   transform-style: preserve-3d;
   transition: 0.9s;
-  transform: rotateY(180deg);
+  transform: rotateY(360deg);
 }
 .filter {
   filter: grayscale(100%);

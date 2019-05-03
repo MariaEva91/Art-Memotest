@@ -293,6 +293,7 @@ let secondClick = [];
 $('.front').on('click', clickImg);
 
 function clickImg() {
+    $(this).addClass('turn');
     for (i = 0; i < cards.length; i++) {
         if (($(this).attr('id') == cards[i].id) && (clicks <= 1)) {
             $(this).attr('src', `${cards[i].src}`)
@@ -358,11 +359,59 @@ $('#goGallery').on('click', () => {
 });
 
 //*Push pictures to carrousel*/
-$('#buttonRight').on('click',()=>{
-    for(let i = 0; i < cards.length;i++){
-        $('.carrousel-pictures').append(`
-        <img src=${cards[1].src} alt="">`);
+$('#buttonRight').on('click', () => {
+    for (let i = 0; i < cards.length; i++) {
     };
+    // add img 2
+    $('.carrousel-pictures').addClass('hide');
+    $('.carrousel').append(` <div class="carrousel-pictures">
+    <img src="${cards[2].src}">
+    </div>
+    <p> <strong>${titlePicture[4]}</strong> </p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae quidem quisquam ullam est
+    voluptate
+    unde deleniti obcaecati numquam repudiandae sint, ipsum natus enim expedita saepe, adipisci eum
+    animi quis. Culpa.</p>`);
+    //add img 3
+    $('.carrousel-pictures').addClass('hide');
+    $('.carrousel').append(` <div class="carrousel-pictures">
+    <img src="${cards[4].src}">
+    </div>
+    <p> <strong>${titlePicture[0]}</strong> </p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae quidem quisquam ullam est
+    voluptate
+    unde deleniti obcaecati numquam repudiandae sint, ipsum natus enim expedita saepe, adipisci eum
+    animi quis. Culpa.</p>`);
+    //add img 4
+    $('.carrousel-pictures').addClass('hide');
+    $('.carrousel').append(` <div class="carrousel-pictures">
+    <img src="${cards[6].src}">
+    </div>
+    <p> <strong>${titlePicture[3]}</strong> </p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae quidem quisquam ullam est
+    voluptate
+    unde deleniti obcaecati numquam repudiandae sint, ipsum natus enim expedita saepe, adipisci eum
+    animi quis. Culpa.</p>`);
+    //add img 5
+    $('.carrousel-pictures').addClass('hide');
+    $('.carrousel').append(` <div class="carrousel-pictures">
+    <img src="${cards[8].src}">
+    </div>
+    <p> <strong>${titlePicture[1]}</strong> </p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae quidem quisquam ullam est
+    voluptate
+    unde deleniti obcaecati numquam repudiandae sint, ipsum natus enim expedita saepe, adipisci eum
+    animi quis. Culpa.</p>`);
+    //add img 6
+    $('.carrousel-pictures').addClass('hide');
+    $('.carrousel').append(` <div class="carrousel-pictures">
+    <img src="${cards[10].src}">
+    </div>
+    <p> <strong>${titlePicture[2]}</strong> </p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae quidem quisquam ullam est
+    voluptate
+    unde deleniti obcaecati numquam repudiandae sint, ipsum natus enim expedita saepe, adipisci eum
+    animi quis. Culpa.</p>`);
 });
 
 
