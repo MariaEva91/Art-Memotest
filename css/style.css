@@ -217,6 +217,7 @@ body {
 .art-gallery .carrousel-pictures {
   width: 800px;
   margin-left: 7%;
+  margin-top: 2%;
 }
 .art-gallery img {
   width: 600px;
