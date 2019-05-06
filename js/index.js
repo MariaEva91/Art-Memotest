@@ -252,13 +252,11 @@ function winning() {
     $('.win-modal').removeClass('hide');
     $('.attempts-won').append(attempts);
     ranking();
-    console.log('ganaste!')
 };
 
 function loosing() {
     $('.main-board').addClass('hide');
     $('.lose-modal').removeClass('hide');
-    console.log('perdiste')
 };
 
 //**Won & Lost function */
@@ -300,7 +298,6 @@ function clickImg() {
             var card = cards[i]
             turnedCards.push(card);
             clicks++;
-            console.log(turnedCards);
         }
         if (clicks > 2) {
             $(this).attr('src', 'imagenes/fondo-pastiche.jpg')
@@ -332,7 +329,6 @@ function clickImg() {
             }, 1200)
         }
     }
-    console.log(attempts);
     $("#attemptsNow").append(`<span>${attempts}</span>`);
     wonLost();
 }
