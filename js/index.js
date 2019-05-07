@@ -355,21 +355,15 @@ $('#goGallery').on('click', () => {
 
 //*Slider carrousel*/
 
-$('#buttonRight').on('click', () => {
-    setInterval(Slider, 5000);
+$('.gallery-container').slick({
+    rtl: true
 });
 
-
-let pictures = $('.carrousel-pictures').length;
-console.log(pictures)
-
-function Slider() {
-    for (let i = 0; i < pictures; i++) {
-        
-    }
-
-
-}
+$('#goGallery').on('click',()=>{
+    $('.carrosuel').slick({
+        setting-name: setting-value
+    })
+});
 
 
 
