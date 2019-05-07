@@ -64,8 +64,7 @@ let cards = [
 ];
 let turnedCards = [];
 let winnersArray = [];
-let titlePicture = ["LA MONA LISA<br/>LEONARDO DA VINCI", "LA NOCHE ESTRELLADA<br/>VINCENT VAN GOGH", "LA PERSISTENCIA DE LA MEMORIA<br/>SALVADOR DALI", "COMPOSICIÓN<br/>PIET MONDRIAN", "DAY BREAK <br/> JOAN MIRÓ"];
-let InfoPicture = [];
+
 
 //**Start game: login and choose level */
 
@@ -354,7 +353,23 @@ $('#goGallery').on('click', () => {
     $('.art-gallery').removeClass('hide');
 });
 
-//*Push pictures to carrousel*/
+//*Slider carrousel*/
+
+$('#buttonRight').on('click', () => {
+    setInterval(Slider, 5000);
+});
+
+
+let pictures = $('.carrousel-pictures').length;
+console.log(pictures)
+
+function Slider() {
+    for (let i = 0; i < pictures; i++) {
+        
+    }
+
+
+}
 
 
 
