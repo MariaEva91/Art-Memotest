@@ -353,17 +353,7 @@ $('#goGallery').on('click', () => {
     $('.art-gallery').removeClass('hide');
 });
 
-//*Slider carrousel*/
 
-$('.gallery-container').slick({
-    rtl: true
-});
-
-$('#goGallery').on('click',()=>{
-    $('.carrosuel').slick({
-        setting-name: setting-value
-    })
-});
 
 
 
