@@ -353,6 +353,10 @@ $('#goGallery').on('click', () => {
     $('.art-gallery').removeClass('hide');
 });
 
+$('#buttonRight').on('click',()=>{
+    $('.carrousel-pictures').removeClass('hide');
+})
+
 
 
 

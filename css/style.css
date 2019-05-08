@@ -11,7 +11,7 @@ body {
 }
 .background img {
   width: 120%;
-  height: 120%;
+  height: auto;
 }
 /*** Welcome menu ***/
 .menu-welcome {
@@ -219,14 +219,14 @@ body {
   margin-left: 7%;
   margin-top: 2%;
 }
-.art-gallery img {
-  width: 600px;
-  height: 500px;
-}
-i {
+.art-gallery i {
   font-size: 50px;
   position: absolute;
   margin-top: 25%;
   margin-left: -10px;
   padding-right: 20px;
+}
+.art-gallery img {
+  width: 600px;
+  height: 500px;
 }
